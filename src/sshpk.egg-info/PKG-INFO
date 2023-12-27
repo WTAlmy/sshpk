@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: sshpk
+Version: 0.0.1
+Summary: Python SSH Profile Kit
+Author-email: William Almy <almywilliam@gmail.com>
+Maintainer-email: William Almy <almywilliam@gmail.com>
+Project-URL: Homepage, https://github.com/WTAlmy/sshpk
+Project-URL: Bug Reports, https://github.com/WTAlmy/sshpk/issues
+Project-URL: Source, https://github.com/WTAlmy/sshpk
+Keywords: python,ssh,profile
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+# SSH PK
+
+## SSH Profile Kit
+
+I spent a few hours writing this to save me a few minutes over my lifetime
+
+### Description
+
+Allows you to swap `id_rsa` and `id_rsa.pub` pairs on the fly. Mainly useful if you are using multiple GitHub accounts.
+
+### Usage
+
+`sshpk help`
+
+#### Copy existing key pairs to a new profile
+
+`sshpk copy my_fav_existing_keys`
+
+#### Generate a new key pair, profile foo, and switch to it
+
+`sshpk new foo`
+
+#### Generate another key pair, profile bar, and switch to it
+
+`sshpk new bar`
+
+#### List profiles
+
+`sshpk list`
+
+#### Load profile foo
+
+`sshpk load foo`
+
+#### Delete profile bar
+
+`sshpk delete bar`
+
+#### Reset to initial state
+
+`sshpk load my_fav_existing_keys`
+`sshpk clean`
+
+### Recovery
+
+Something fucked up? Look in `~/.ssh/sshpk/backups` for your keys.

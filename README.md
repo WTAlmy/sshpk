@@ -1,46 +1,50 @@
-# SSH PK
+## SSH PK
 
-## SSH Profile Kit
+### SSH Profile Kit
 
 I spent a few hours writing this to save me a few minutes over my lifetime
 
-### Description
+#### Description
 
 Allows you to swap `id_rsa` and `id_rsa.pub` pairs on the fly. Mainly useful if you are using multiple GitHub accounts.
 
-### Usage
+#### Setup
 
-`sshpk help`
+From top level directory (containing this README):
+`pip3 install .`
 
-#### Copy existing key pairs to a new profile
+#### Usage
 
-`sshpk copy my_fav_existing_keys`
+```bash
+# List of commands
+$ sshpk help
+> `['help', 'clean', 'backup', 'list', 'copy', 'delete', 'load', 'new']`
 
-#### Generate a new key pair, profile foo, and switch to it
+# Copy existing key pairs to a new profile
+$ sshpk copy my_fav_existing_keys
 
-`sshpk new foo`
+# Generate a new key pair, profile foo, and switch to it
+$ sshpk new foo`
 
-#### Generate another key pair, profile bar, and switch to it
+# Generate another key pair, profile bar, and switch to it
+$ sshpk new bar
 
-`sshpk new bar`
+# List profiles
+$ sshpk list
+> `foo`
+> `bar`
 
-#### List profiles
+# Load profile foo
+$ sshpk load foo
 
-`sshpk list`
+# Delete profile bar
+$ sshpk delete bar
 
-#### Load profile foo
+# Reset to initial state
+$ sshpk load my_fav_existing_keys
+$ sshpk clean
+```
 
-`sshpk load foo`
-
-#### Delete profile bar
-
-`sshpk delete bar`
-
-#### Reset to initial state
-
-`sshpk load my_fav_existing_keys`
-`sshpk clean`
-
-### Recovery
+#### Recovery
 
 Something fucked up? Look in `~/.ssh/sshpk/backups` for your keys.
