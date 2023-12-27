@@ -12,15 +12,15 @@ Allows you to swap `id_rsa` and `id_rsa.pub` pairs on the fly. Mainly useful if 
 
 `sshpk help`
 
-#### Copy existing `id_rsa` and `id_rsa.pub`
+#### Copy existing key pairs to a new profile
 
 `sshpk copy my_fav_existing_keys`
 
-#### Generate a new `id_rsa` and `id_rsa.pub`
+#### Generate a new key pair, profile foo, and switch to it
 
 `sshpk new foo`
 
-#### Generate another `id_rsa` and `id_rsa.pub`
+#### Generate another key pair, profile bar, and switch to it
 
 `sshpk new bar`
 
@@ -28,15 +28,15 @@ Allows you to swap `id_rsa` and `id_rsa.pub` pairs on the fly. Mainly useful if 
 
 `sshpk list`
 
-#### Swap from `bar` to `foo`
+#### Load profile foo
 
 `sshpk load foo`
 
-#### Get rid of `bar`
+#### Delete profile bar
 
 `sshpk delete bar`
 
-#### Reset to prior state
+#### Reset to initial state
 
 `sshpk load my_fav_existing_keys`
 `sshpk clean`
